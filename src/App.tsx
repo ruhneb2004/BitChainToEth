@@ -1,4 +1,5 @@
-import SwapComponent from "./SwapComponent";
+import SwapComponentWTB from "./SwapComponentWTB";
+import SwapComponentBTW from "./SwapComponentBTW";
 import TransactionsComponent from "./TransactionComponent";
 import Balances from "./Balances";
 import { useGardenSetup } from "./store";
@@ -9,7 +10,8 @@ function App() {
   return (
     <div id="container">
       <Balances />
-      <SwapComponent></SwapComponent>
+      <SwapComponentWTB></SwapComponentWTB>
+      <SwapComponentBTW></SwapComponentBTW>
       <TransactionsComponent></TransactionsComponent>
     </div>
   );

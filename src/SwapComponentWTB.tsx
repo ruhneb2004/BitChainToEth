@@ -7,7 +7,7 @@ type AmountState = {
   wbtcAmount: string | null;
 };
 
-const SwapComponent: React.FC = () => {
+const SwapComponentWTB: React.FC = () => {
   const [amount, setAmount] = useState<AmountState>({
     btcAmount: null,
     wbtcAmount: null,
@@ -39,39 +39,39 @@ const SwapComponent: React.FC = () => {
 };
 
 const WalletConnect: React.FC = () => {
-  const { connectMetaMask, metaMaskIsConnected } = useMetaMaskStore();
+  // const { connectMetaMask, metaMaskIsConnected } = useMetaMaskStore();
 
   return (
     <div className="swap-component-top-section">
       <span className="swap-title">Swap</span>
-      <MetaMaskButton
+      {/* <MetaMaskButton
         isConnected={metaMaskIsConnected}
         onClick={connectMetaMask}
-      />
+      /> */}
     </div>
   );
 };
 
-type MetaMaskButtonProps = {
-  isConnected: boolean;
-  onClick: () => void;
-};
+// type MetaMaskButtonProps = {
+//   isConnected: boolean;
+//   onClick: () => void;
+// };
 
-const MetaMaskButton: React.FC<MetaMaskButtonProps> = ({
-  isConnected,
-  onClick,
-}) => {
-  const buttonClass = `connect-metamask button-${
-    isConnected ? "black" : "white"
-  }`;
-  const buttonText = isConnected ? "Connected" : "Connect Metamask";
+// const MetaMaskButton: React.FC<MetaMaskButtonProps> = ({
+//   isConnected,
+//   onClick,
+// }) => {
+//   const buttonClass = `connect-metamask button-${
+//     isConnected ? "black" : "white"
+//   }`;
+//   const buttonText = isConnected ? "Connected" : "Connect Metamask";
 
-  return (
-    <button className={buttonClass} onClick={onClick}>
-      {buttonText}
-    </button>
-  );
-};
+//   return (
+//     <button className={buttonClass} onClick={onClick}>
+//       {buttonText}
+//     </button>
+//   );
+// };
 
 type TransactionAmountComponentProps = {
   amount: AmountState;
@@ -200,4 +200,4 @@ const Swap: React.FC<SwapAndAddressComponentProps> = ({
   );
 };
 
-export default SwapComponent;
+export default SwapComponentWTB;
